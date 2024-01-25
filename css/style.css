@@ -1,0 +1,21 @@
+body{
+    background-color: #E1E5EE;
+}
+
+nav{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+
+}
+
+
+a{
+    background-color: #2A324B;
+    border: 10px solid #2A324B;
+    display: inline;
+    padding: 5px 25px 10px;
+    margin-left: 15px;
+    height: auto;
+    color: #E1E5EE;
+}

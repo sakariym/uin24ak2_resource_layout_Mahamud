@@ -95,3 +95,32 @@ const resources = [
     },
 ]
 
+const tabs = document.querySelectorAll('nav a');
+const information = document.getElementById('information');
+
+let selectedTab = 0;
+let content = '';
+
+tabs.forEach((tab, index) => {
+    tab.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        tabs[selectedTab].classList.remove('highlighted');
+        selectedTab = index;
+        tab.classList.add('highlighted');
+
+        let newContent = `
+            <h2>${resources[selectedTab].category}</h2>
+            <p>${resources[selectedTab].text}</p>
+            <ul>
+            ${resources[index].sources.map(source => `
+              <li>
+                <a href="${source.url}">${source.title}</a>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+
+        information.innerHTML = newContent;
+    });
+});
